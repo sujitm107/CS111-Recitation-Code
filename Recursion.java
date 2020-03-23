@@ -10,13 +10,32 @@ public class Recursion{
         return 0;
     }
 
-    public static int pyramid(){
-        public 
+    public static void pyramid(int nStars){
+        
+    }
+
+    public static void upsideDownPyramid(int nStars){
+
+        
     }
 
     public static double harmonic(int x){
 
         return 0;
+    }
+
+    public static void main(String[] args){
+
+        System.out.println(factorial(7));
+
+        System.out.println(fib(8));
+
+        pyramid(5);
+
+        upsideDownPyramid(5);
+
+        System.out.println(harmonic(5));
+
     }
 
     public static void printRow(int nStars){
@@ -28,13 +47,5 @@ public class Recursion{
         printRow(nStars - 1);
     }
 
-    public static void main(String[] args){
 
-        System.out.println(factorial(7));
-
-        System.out.println();
-
-        System.out.println();
-
-    }
 }
