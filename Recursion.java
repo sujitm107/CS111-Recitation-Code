@@ -6,9 +6,21 @@ public class Recursion{
          * What is the base case
          * What is the recursive step?
          */
+        if(n==1){
+            return 1;
+        }
+
         
+        return n*factorial(n-1);
+
+        /*
+            factorial(5) = 5*factorial(4) = 120
+            factorial(4) = 4*factorial(3) = 24
+            factorial(3) = 3*factorial(2) = 6
+            factorial(2) = 2*factorial(1) = 2
+            facotorial(1) = 1
+        */
         
-        return 0;
     }
 
     public static int fib(int n){
@@ -19,11 +31,35 @@ public class Recursion{
          * Here are the first 10: {1, 1, 2, 3, 5, 8, 13, 21, 34, 55}
          * Write a recursive method, fib, which takes an integer n, as a parameter, and computers the nth term of the sequence
         */
-     
-        return 0;
+        if(n == 1){
+            return 1;
+        }
+        if(n == 2){
+            return 1;
+        }
+
+
+        return fib(n-1)+fib(n-2);
     }
 
     public static void pyramid(int nStars){
+
+        if(nStars == 0){
+            return;
+        }
+
+        pyramid(nStars-1);
+        printRow(nStars);
+
+
+        
+
+
+        //pyramid(5) --> pyramid(4) --> pyramid(3) -- > pyramid(2) --> pyramid(1) --> pyramid(0)
+
+        *
+        **
+        ***
 
         /**
          * Write two recursive methods, pyramid and upsideDownPyramid, which both take one
@@ -51,6 +87,15 @@ public class Recursion{
          *  *
          */
 
+        if(nStars == 0){
+            return;
+        }
+
+         printRow(nStars);
+         upsideDownPyramid(nStars-1);
+
+
+
     }
 
     public static double harmonic(int x){
@@ -69,11 +114,11 @@ public class Recursion{
 
         //System.out.println(factorial(7));
 
-        //System.out.println(fib(8));
+        System.out.println(fib(6));
 
-        pyramid(5);
+        //pyramid(5);
 
-        upsideDownPyramid(5);
+        //upsideDownPyramid(5);
 
         //System.out.println(harmonic(5));
 
