@@ -1,34 +1,21 @@
-public class Recursion{
+public class RecursionSolutions{
 
-    public static int factorial(int n){ //5
+    public static int factorial(int n){
         /**
          * Write a recursive method for finding the factorial of a given number: public int factorial(int n)
          * What is the base case
          * What is the recursive step?
          */
-
+        
+        //Note that 0! is equal to 1
         if(n == 0){
-            return 1;
-        }
-        if(n == 1){
-            return 1;
-        }
+             return 1;
+         }
        
-       return n*factorial(n - 1);
-
-       // 5! = 5*4!
-       // 4! = 4*3!
-
-       /*
-            factorial(5) = 5*factorial(4); 5*24 = 120
-            factorial(4) = 4*factorial(3); 4*6 = 24
-            factorial(3) = 3*factorial(2); 3*2 = 6
-            factorial(2) = 2*factorial(1); 2*1 = 2
-            factorial(1) = 1
-       */
+       return n * factorial(n-1);
     }
 
-    public static int fib(int n){ //2 --> 2nd term
+    public static int fib(int n){
         /**
          * Fibonacci’s sequence is a sequence in which the current term is obtained by adding the previous two terms. 
          * The first two terms of the sequence are 1. 
@@ -42,17 +29,8 @@ public class Recursion{
             return 1;
         }
 
-        //Starting from the 3rd term we can use recursion!
         return fib(n-1)+fib(n-2);
     }
-
-        /*
-            fib(5) = fib(4)+fib(3) -- 3+2 = 5
-            fib(4) = fib(3)+fib(2) -- 2+1 = 3
-            fib(3) = fib(2)+fib(1) -- 1+1 = 2
-            fib(2) = 1
-            fib(1) = 1
-        */
 
     public static void pyramid(int nStars){
         /**
@@ -69,24 +47,20 @@ public class Recursion{
          */
 
          if(nStars == 0){
-             return;
+            return;
          }
 
-         upsideDownPyramid(nStars-1);
+         pyramid(nStars-1);
          printRow(nStars);
 
+
+         /*
+            
+         */
+        
     }
 
-    /*
-    upsideDownPyramid(2) -- > upsideDownPyramid(1) --> upsideDownPyramid(0)
-                       printRow(3) <-- printRow(2)    <--    printRow(1)   <--
-
-    */
-
-
-    public static void upsideDownPyramid(int nStars){
-        //Hint: How many base cases do you need?
-
+    public static void upsideDownPyramid(int nStars){    
         /**
          *  *****
          *  ****
@@ -95,30 +69,14 @@ public class Recursion{
          *  *
          */
 
-        /* DO NOT USE WHEN USING RECURSION
-            break -- stops the loop
-            continue -- that goes to the next iteration
-        */
-
         if(nStars == 0){
-            return; //return means exit really
+            return;
         }
 
-        //nStars = 3
         printRow(nStars);
         upsideDownPyramid(nStars-1);
 
     }
-
-    /*
-        upsideDownPyramid(3) = printRow(3);                 ***
-                               upsideDownPyramid(2);
-        upsideDownPyramid(2) = printRow(2);                 **
-                               upsideDownPyramid(1);
-        upsideDownPyramid(1) = printRow(1);                 *
-                               upsideDownPyramid(0); return;
-                    
-    */
 
     public static double harmonic(int x){
         /**
@@ -128,26 +86,24 @@ public class Recursion{
          * The second is x = 2 is 1 + 0.5 = 1.5
          */
 
-        return 0.0;
+        if(x == 1){
+            return 1;
+        }
+
+        return (1.0/x) + harmonic(x-1);
     }
 
     public static void main(String[] args){
 
-        //System.out.println(factorial(7));
+        System.out.println(factorial(7));
 
-        //System.out.println(fib(6));
+        System.out.println(fib(6));
 
         //pyramid(5);
 
-        //upsideDownPyramid(5);
+        upsideDownPyramid(5);
 
-        //System.out.println(harmonic(5));
-
-        if(condition){
-
-        } else{
-            code
-        }
+        System.out.println(harmonic(5));
 
     }
 
