@@ -15,17 +15,59 @@ public class Strings{
 
     public static boolean palindrome(String s){
 
-        return false;
+        for(int i = 0; i<s.length()/2; i++){
+            if(s.charAt(i) != s.charAt(s.length()-(i+1))){
+                return false;
+            }
+        }
+        
+        return true;
     }
 
     public static boolean palindrome2(String s){
+
+        // "a" and "A" --> true
+        /*
+            "A" and "A" --> true
+            "a" and "a" --> true
+        */
+
+        s = s.toLowerCase();
+
+        for(int i = 0; i<s.length()/2; i++){
+            if(s.charAt(i) != s.charAt(s.length()-(i+1))){
+                return false;
+            }
+        }
         
-        return false;
+        return true;
     }
 
     public static boolean palindrome3(String s){
+
+        s = removeSpaces(s);
+
+        for(int i = 0; i<s.length()/2; i++){
+            if(s.charAt(i) != s.charAt(s.length()-(i+1))){
+                return false;
+            }
+        }
         
-        return false;
+        return true;
+
+    }
+
+    public static String removeSpaces(String s){
+
+        String temp = "";
+
+        for(int i = 0; i<s.length(); i++){
+            if(s.charAt(i) != ' '){
+                temp += s.substring(i, i+1);
+            }
+        }
+
+        return temp;
     }
     
     /**
@@ -37,7 +79,15 @@ public class Strings{
 
     public static boolean recursivePalindrome(String s){
 
-        return false;
+        if(s.length() < 2){
+            return true;
+        }
+
+        if(s.charAt(0) != s.charAt(s.length()-1)){
+            return false;
+        }
+        
+        return recursivePalindrome(s.substring(1, s.length()-1));
     }
 
     /**
@@ -69,5 +119,12 @@ public class Strings{
 
     public static void main(String[] args){
 
+        System.out.println(palindrome("racecar"));
+
+        System.out.println(palindrome2("Bob"));
+        
+        System.out.println(palindrome3("no lemon no melon"));
+
+        System.out.println(recursivePalindrome("otto"));
     }
 }
