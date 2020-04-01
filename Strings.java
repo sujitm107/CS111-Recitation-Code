@@ -14,7 +14,7 @@ public class Strings{
      */
 
     public static boolean palindrome(String s){
-        
+
         return false;
     }
 
@@ -47,7 +47,7 @@ public class Strings{
      * Write a method, anagram, that takes a String as input, and returns true if it is an anagram.
      */
 
-    public static boolean anagram(String s){
+    public static boolean anagram(String word1, String word2){
 
         return false;
     }
