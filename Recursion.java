@@ -143,12 +143,6 @@ public class Recursion{
 
         //System.out.println(harmonic(5));
 
-        if(condition){
-
-        } else{
-            code
-        }
-
     }
 
     public static void printRow(int nStars){
