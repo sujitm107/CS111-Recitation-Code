@@ -19,7 +19,7 @@ package BankAccount;
 public class BankAccount {
     //Fields
 
-    //Constructors
+    //Constructor
 
     //instance methods
 }
