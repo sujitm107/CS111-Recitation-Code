@@ -1,12 +1,12 @@
-package BankAccount;
 
-public class Main {
+public class Main2 {
     public static void main(String[] args){
         
-        BankAccount sally = new BankAccount("Sally", 0, 100, 1234);
+        BankAccount2 sally = new BankAccount2("Sally", 0, 100, 1234);
 
         sally.depositChecking(100);
         System.out.println(sally.getcheckingBalanceAmount());
+
 
     }
 }
